@@ -13,7 +13,7 @@ echo 01 > ca.srl
 cp "$1" ca.pem
 cp "$2" ca-key.pem
 
-openssl genrsa -out client-key.pem
+openssl genrsa -out client-key.pem 4096
 openssl req -new -key client-key.pem -out client.csr
 
 echo 'extendedKeyUsage = clientAuth' > extfile.cnf
